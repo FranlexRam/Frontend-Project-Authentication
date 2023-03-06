@@ -1,0 +1,24 @@
+// import { useParams } from "react-router-dom";
+import Reset from "../../components/Reset/Reset";
+import "./ResetLayout.scss";
+
+const ResetLayout = ({history}) => {
+    // const test = useParams()
+    // console.log(test)
+    const handleClick = ()=> {
+        history.push("/");
+    };
+
+    return ( <div className='authlayout'>
+        {/* logo */}
+        <div className='authlayout_logo'>
+            <img src="../../assets/img/shuttle.svg" alt="logo" />
+        </div>
+        {/* form */}
+        <Reset />
+        {/* actions */}
+        <p className='reset_p' onClick={handleClick}>login ?</p>
+    </div> );
+}
+ 
+export default ResetLayout;
