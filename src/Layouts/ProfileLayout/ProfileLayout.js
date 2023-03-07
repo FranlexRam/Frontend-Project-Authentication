@@ -1,3 +1,4 @@
+import Appbar from "../../components/Appbar/Appbar.js";
 import './profilelayout.css';
 
 // const ProfileLayout = ({isLoggedIn,setIsLoggedIn}) => {
@@ -5,7 +6,14 @@ import './profilelayout.css';
         // const {isLoggedIn,setIsLoggedIn} = props
     return (
         <div className="profilelayout"  >
-            <p>ProfileLayout</p>
+            {/* appbar */}
+            <Appbar />
+            {/* sidebar */}
+            {/* content */}
+            <div className="profilelayout_content">
+                {/* feed */}
+                {/* profile */}
+            </div>
         </div>
     );
 }

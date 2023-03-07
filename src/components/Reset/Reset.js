@@ -14,12 +14,12 @@ const Reset = () => {
         <Input
             type={visible ? "text" : "password"}
             icon={visible ? <MdVisibility /> : <MdVisibilityOff />}
-            text="Password"
+            text="New Password"
             handleClick={handleClick} />
         <Input
             type={visible ? "text" : "password"}
             icon={visible ? <MdVisibility /> : <MdVisibilityOff />}
-            text="Confirm Password"
+            text="Confirm New Password"
             handleClick={handleClick} />
             <div className="login_btn">
                 <button>reset</button>
