@@ -1,12 +1,14 @@
 // import { useParams } from "react-router-dom";
 import Reset from "../../components/Reset/Reset";
 import "./ResetLayout.scss";
+import { useNavigate } from "react-router-dom";
 
 const ResetLayout = ({history}) => {
     // const test = useParams()
     // console.log(test)
+    let navigate = useNavigate();
     const handleClick = ()=> {
-        history.push("/");
+        navigate("/");
     };
 
     return ( <div className='authlayout'>
