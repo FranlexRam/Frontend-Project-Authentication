@@ -1,3 +1,6 @@
+import {BiBookContent} from 'react-icons/bi'
+import {BiUserCircle} from 'react-icons/bi'
+import {BiLogOut} from 'react-icons/bi'
 import './sidebar.scss';
 
 const Sidebar = () => {
@@ -5,12 +8,15 @@ const Sidebar = () => {
         <div className="sidebar_menu">
             <ul>
                 <li>
+                    <BiBookContent />
                     <p>feed</p>
                 </li>
                 <li>
+                    <BiUserCircle />
                     <p>profile</p>
                 </li>
                 <li>
+                    <BiLogOut />
                     <p>logout</p>
                 </li>
             </ul>
