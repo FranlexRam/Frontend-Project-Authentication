@@ -1,7 +1,8 @@
+import {BiMenuAltLeft} from 'react-icons/bi'
 import Avatar from "../Avatar/Avatar.js"
 import './appbar.scss';
 
-const Appbar = () => {
+const Appbar = ({handleSidebar}) => {
     return ( <div className="appbar">
         <div className="appbar_wrapper">
             {/* logo */}
@@ -12,6 +13,7 @@ const Appbar = () => {
             {/* avatar */}
             <div className="appbar_avatar">
                 <Avatar />
+                <BiMenuAltLeft onClick={handleSidebar} />
             </div>
         </div>
     </div> );
