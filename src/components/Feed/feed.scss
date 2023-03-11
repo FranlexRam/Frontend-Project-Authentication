@@ -1,7 +1,8 @@
 @import '../../components/variables/variables.scss';
 
+
 .feed {
-    background-color: rgb($color: $purple-light, $alpha: 0.8);
+    background-color: rgba($color: $purple-light, $alpha: 0.8);
     border-radius: 5px;
     padding: 2em;
     width: 100%;
