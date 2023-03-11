@@ -1,8 +1,10 @@
+import Profile from "../../components/Profile/Profile.js";
 import Feed from "../../components/Feed/Feed.js";
 import Sidebar from "../../components/Sidebar/Sidebar.js";
 import Appbar from "../../components/Appbar/Appbar.js";
 import './profilelayout.css';
 import { useState } from "react";
+
 
 // const ProfileLayout = ({isLoggedIn,setIsLoggedIn}) => {
     const ProfileLayout = () => {
@@ -31,6 +33,9 @@ import { useState } from "react";
                     <Feed />
                 </div>
                 {/* profile */}
+                <div className="profilelayout_content-profile">
+                    <Profile />
+                </div>
             </div>
         </div>
     );
