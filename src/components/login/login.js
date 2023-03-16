@@ -3,7 +3,7 @@ import {FcGoogle} from 'react-icons/fc'
 import {MdVisibility} from 'react-icons/md'
 import {MdVisibilityOff} from 'react-icons/md'
 import Input from "../input/input"
-import "./login.css";
+import "./login.scss";
 
 const Login = () => {
     const [visible, setVisible] = useState(false)

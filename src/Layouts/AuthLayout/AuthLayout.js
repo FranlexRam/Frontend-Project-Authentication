@@ -1,7 +1,7 @@
 import Forgot from "../../components/Forgot/Forgot.js";
 import Register from '../../components/register/register';
 import Login from '../../components/login/login'
-import "./authlayout.css";
+import "./authlayout.scss";
 import { useState } from "react";
 
 const AuthLayout = () => {
