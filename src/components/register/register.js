@@ -33,11 +33,43 @@ const Register = () => {
         if(isEmpty(name) || isEmpty(password))
         return toast("Please fill in all fields.", {
             className: 'toast-failed',
-            bodyClassName: //8:21
+            bodyClassName: 'toast-failed'
+        })
+        //check email
+        if(!isEmail(email));
+        return  toast("Please enter a valid email address.", {
+            className: 'toast-failed',
+            bodyClassName: 'toast-failed'
+        })
+        //check password
+        if(isLength(password))
+        return toast("Password must be at least 6 characters.". {
+            className: 'toast-failed',
+            bodyClassName: 'toast-failed'
         });
+        //check match
+        if(!isMatch (password, cf_password))
+        return toast("Password did not match.", {
+            className: 'toast-failed',
+            bodyClassName: 'toast-failed'
+        })
+        try {
+            const res = await axios.post("/api/auth/register", {
+                name, email, password
+            })
+          toast(res.data.msg, {
+            className: 'toast-success',
+            bodyClassName: 'toast-success'
+          })  
+        } catch (err) {
+            toast(err.response.data.msg, {
+                className: 'toast-failed',
+                bodyClassName: 'toast-failed'
+            })
+        }
     }
 
-    return ( <form>
+    return ( <><ToastContainer/> <form>
         <Input type="text" text="Name" name="name" handleChange={handleChange}/>
         <Input type="text" text="Email" name="email" handleChange={handleChange}/>
         <Input
@@ -59,7 +91,7 @@ const Register = () => {
         <div className="login_btn">
             <button>register</button>
         </div>
-    </form> );
+    </form> </> );
 }
  
 export default Register;
