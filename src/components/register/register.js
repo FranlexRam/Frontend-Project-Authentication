@@ -65,11 +65,13 @@ const Register = () => {
             toast(err.response.data.msg, {
                 className: 'toast-failed',
                 bodyClassName: 'toast-failed'
-            })
+            });
         }
-    }
+    };
 
-    return ( <><ToastContainer/> <form>
+    const hadleReset = () //min 11:48
+
+    return ( <><ToastContainer/> <form onSubmit={register}>
         <Input type="text" text="Name" name="name" handleChange={handleChange}/>
         <Input type="text" text="Email" name="email" handleChange={handleChange}/>
         <Input
@@ -89,7 +91,7 @@ const Register = () => {
             handleChange={handleChange}
         />
         <div className="login_btn">
-            <button>register</button>
+            <button type="submit">register</button>
         </div>
     </form> </> );
 }
