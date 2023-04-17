@@ -40,36 +40,42 @@ const Register = () => {
         return  toast("Please enter a valid email address.", {
             className: 'toast-failed',
             bodyClassName: 'toast-failed'
-        })
+        });
         //check password
-        if(isLength(password))
-        return toast("Password must be at least 6 characters.". {
-            className: 'toast-failed',
-            bodyClassName: 'toast-failed'
+        if (isLength(password))
+        return toast("Password must be at least 6 characters.", {
+            className: "toast-failed",
+            bodyClassName: "toast-failed",
         });
         //check match
         if(!isMatch (password, cf_password))
         return toast("Password did not match.", {
             className: 'toast-failed',
-            bodyClassName: 'toast-failed'
-        })
+            bodyClassName: 'toast-failed',
+        });
         try {
             const res = await axios.post("/api/auth/register", {
-                name, email, password
-            })
+                name, email, password,
+            });
           toast(res.data.msg, {
             className: 'toast-success',
             bodyClassName: 'toast-success'
-          })  
+          }); 
         } catch (err) {
             toast(err.response.data.msg, {
                 className: 'toast-failed',
                 bodyClassName: 'toast-failed'
             });
         }
+        handleReset();
     };
 
-    const hadleReset = () //min 11:48
+    const handleReset = () =>{
+        Array.from(document.querySelectorAll("input")).forEach(
+            (input) => (input.value = '')
+        )
+        setData({...data, name: "", email: "", password: "", cf_password})
+    }
 
     return ( <><ToastContainer/> <form onSubmit={register}>
         <Input type="text" text="Name" name="name" handleChange={handleChange}/>
