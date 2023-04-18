@@ -20,7 +20,7 @@ function App() {
         element={<ResetLayout/>}
       />
       <Route
-        path="/api/auth/activate/:activate_token"
+        path="/api/auth/activate/:activation_token"
         element={<ActivateLayout />}
       />
       </Routes>

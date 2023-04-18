@@ -33,7 +33,7 @@ const Register = () => {
         if(isEmpty(name) || isEmpty(password))
         return toast("Please fill in all fields.", {
             className: 'toast-failed',
-            bodyClassName: 'toast-failed'
+            bodyClassName: 'toast-failed',
         })
         //check email
         if(!isEmail(email))
@@ -74,7 +74,7 @@ const Register = () => {
         Array.from(document.querySelectorAll("input")).forEach(
             (input) => (input.value = '')
         )
-        setData({...data, name: "", email: "", password: "", cf_password})
+        setData({...data, name: "", email: "", password: "", cf_password: ""});
     }
 
     return ( <><ToastContainer/> <form onSubmit={register}>
