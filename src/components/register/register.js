@@ -36,11 +36,11 @@ const Register = () => {
             bodyClassName: 'toast-failed'
         })
         //check email
-        if(!isEmail(email));
-        return  toast("Please enter a valid email address.", {
-            className: 'toast-failed',
-            bodyClassName: 'toast-failed'
-        });
+        if(!isEmail(email))
+            return  toast("Please enter a valid email address.", {
+                className: 'toast-failed',
+                bodyClassName: 'toast-failed'
+            });
         //check password
         if (isLength(password))
         return toast("Password must be at least 6 characters.", {
