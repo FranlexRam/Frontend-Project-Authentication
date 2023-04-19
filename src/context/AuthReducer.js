@@ -1,6 +1,6 @@
-const AuthReducer = (state,action) =>{
+const AuthReducer = (state, action) =>{
     switch (action.type) {
-        case "SIGNIN" :
+        case "SIGNING" :
             return {
                 ...state,
                 isLoggedIn: true,
