@@ -60,6 +60,10 @@
   color: #fff;
 }
 
+input[type="text"]:disabled {
+  color: #000;
+}
+
 @include for-desktop {
   .input {
     label {
