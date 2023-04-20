@@ -10,11 +10,19 @@ import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
+const initialState = {
+    name: '',
+    password: '',
+    cf_password: ''
+}
+
 const Profile = () => {
 const inputFile = useRef(null);
 const [visible, setVisible] = useState(false);
 const {user, token} = useContext(AuthContext);
-const [avatar, setAvatar] = useState(false)
+const [avatar, setAvatar] = useState(false);
+const [data, setData] = useState(initialState);
+const {name, password, cf_password} = data;
 
 const handleInput = () => {
     inputFile.current.click();
@@ -23,6 +31,10 @@ const handleInput = () => {
 const handleClick = ()=> {
     setVisible(!visible);
 };
+
+const handleChange = (e) => {
+    setData({...data, [e.target.name]: e.target.value})
+}
 
 const changeAvatar = async (e) => {
     e.preventDefault()
@@ -56,6 +68,24 @@ const changeAvatar = async (e) => {
     }
 }
 
+const updateInfo = async () => {
+    try {
+        
+    } catch (err) {
+        toast(err.response.data.msg, {}) //min 04:00
+    }
+}
+
+const handleSubmit = (e) => {
+    e.preventDefault()
+    if (name || avatar) {
+        updateInfo()
+    }
+    if (password) {
+        updatePassword()
+    }
+}
+
     return ( 
         <>
         <ToastContainer />
@@ -71,19 +101,23 @@ const changeAvatar = async (e) => {
         {/* form */}
         <form className="profile_input">
             <div className="profile_input-form">
-                <Input type="text" text="Name" defaultValue={user.name}/>
-                <Input type="text" text="Email" defaultValue={user.email} disabled/>
+                <Input type="text" text="Name" defaultValue={user.name} name="name" handleChange={handleChange}/>
+                <Input name="email" type="text" text="Email" defaultValue={user.email} disabled handleChange={handleChange}/>
                 <Input
+                name="password"
                     type={visible ? "text" : "password"}
                     icon={visible ? <MdVisibility /> : <MdVisibilityOff />}
                     text="Password"
                     handleClick={handleClick}
+                    handleChange={handleChange}
                  />
                 <Input
+                name="cf_password"
                     type={visible ? "text" : "password"}
                     icon={visible ? <MdVisibility /> : <MdVisibilityOff />}
                     text="Confirm Password"
                     handleClick={handleClick}
+                    handleChange={handleChange}
                  />
                 <div className="login_btn">
                     <button>update</button>
