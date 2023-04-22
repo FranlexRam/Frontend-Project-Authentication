@@ -127,6 +127,13 @@ const updatePassword = async () => {
         }
 };
 
+const handleReset = () =>{
+    Array.from(document.querySelectorAll("input")).forEach(
+        (input) => (input.value = '')
+    );
+    setData({...data, name: "", password: "", cf_password: ""});
+};
+
 const handleSubmit = (e) => {
     e.preventDefault()
     if (name || avatar) {
@@ -134,6 +141,7 @@ const handleSubmit = (e) => {
     }
     if (password) {
         updatePassword()
+        handleReset()
     }
 }
 

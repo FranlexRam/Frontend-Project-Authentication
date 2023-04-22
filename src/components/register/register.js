@@ -73,9 +73,9 @@ const Register = () => {
     const handleReset = () =>{
         Array.from(document.querySelectorAll("input")).forEach(
             (input) => (input.value = '')
-        )
+        );
         setData({...data, name: "", email: "", password: "", cf_password: ""});
-    }
+    };
 
     return ( <><ToastContainer/> <form onSubmit={register}>
         <Input type="text" text="Name" name="name" handleChange={handleChange}/>
