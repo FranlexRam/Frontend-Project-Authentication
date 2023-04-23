@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import {FcGoogle} from 'react-icons/fc';
+import {FcCdLogo, FcGoogle} from 'react-icons/fc';
 import {MdVisibility} from 'react-icons/md';
 import {MdVisibilityOff} from 'react-icons/md';
 import {isEmpty, isEmail} from "../helper/validate.js";
@@ -93,15 +93,15 @@ const Login = () => {
             <div className="login_btn">
                 <button type='submit'>login</button>
                 <GoogleLogin
-                    clientId={process.env.REACT_APP_G_CLIENT_ID}
+                    clientId='198710449732-hq39e89jgbbglvo8a34f225slfmce1a8.apps.googleusercontent.com'//{process.env.REACT_APP_G_CLIENT_ID}
                     render={(renderProps) => (
                         <button className="btn-alt" onClick={renderProps.onClick} disabled={renderProps.disabled}>
                             sign in <FcGoogle />
                         </button>
                     )}
-                    cookiePolicy={'single_host_origin'}
+                    cookiePolicy='single_host_origin'
                     onSuccess={googleSuccess}
-                    onFailure={googleError}
+                    onFailure={(e) => console.log(e)}
                 />
             </div>
         </form>

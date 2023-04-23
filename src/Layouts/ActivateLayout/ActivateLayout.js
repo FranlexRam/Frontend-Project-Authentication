@@ -1,12 +1,13 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './activateLayout.scss';
 import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from 'react';
 
-const ActivateLayout = ({history}) => {
+const ActivateLayout = () => {
     const {activation_token} = useParams()
+    let navigate = useNavigate();
 
     useEffect(()=>{
         //check token
@@ -32,7 +33,7 @@ const ActivateLayout = ({history}) => {
     }, [activation_token]);
 
     const handleClick = () => {
-        history.push("/");
+        navigate("/");
     };
 
     return (
