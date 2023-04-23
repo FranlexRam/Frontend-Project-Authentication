@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import {FcCdLogo, FcGoogle} from 'react-icons/fc';
+import {FcGoogle} from 'react-icons/fc';
 import {MdVisibility} from 'react-icons/md';
 import {MdVisibilityOff} from 'react-icons/md';
 import {isEmpty, isEmail} from "../helper/validate.js";
