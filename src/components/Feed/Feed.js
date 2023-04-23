@@ -10,7 +10,7 @@ const Feed = () => {
         </div>
         {/* img */}
         <div className="feed_img">
-            <img src="https://source.unsplash.com/random" alt="feed_image" />
+            <img src="https://source.unsplash.com/collection/happy-people" alt="feed_image" />
         </div>
         {/* content */}
         <div className="feed_content">

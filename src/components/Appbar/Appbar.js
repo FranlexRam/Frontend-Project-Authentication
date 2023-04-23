@@ -9,7 +9,7 @@ const Appbar = ({handleSidebar}) => {
                 {/* logo */}
                 <div className="appbar_logo">
                     <img src="./assets/img/shuttle.svg" alt="logo" />
-                    <p>mernauth</p>
+                    <p>Franlex's To Do App</p>
                 </div>
                 {/* avatar */}
                 <div className="appbar_avatar">

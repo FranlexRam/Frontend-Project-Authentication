@@ -31,13 +31,13 @@ const Login = () => {
     };
 
     const login = async (e) => {
-        //check fields
         e.preventDefault()
+        //check fields
         if(isEmpty(email) || isEmpty(password))
         return toast("Please fill in all fields.", {
             className: 'toast-failed',
             bodyClassName: 'toast-failed',
-        })
+        });
         //check email
         if(!isEmail(email))
         return toast("Please enter a valid email address.", {
