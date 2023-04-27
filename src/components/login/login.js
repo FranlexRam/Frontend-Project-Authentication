@@ -10,6 +10,8 @@ import Input from "../input/input";
 import "./login.scss";
 import {AuthContext} from "../../context/AuthContext.js";
 import GoogleLogin from 'react-google-login';
+import { gapi } from "gapi-script";
+import { useEffect } from 'react';
 
 const initialState = {
     name: '',
@@ -93,7 +95,7 @@ const Login = () => {
             <div className="login_btn">
                 <button type='submit'>login</button>
                 <GoogleLogin
-                    clientId='198710449732-hq39e89jgbbglvo8a34f225slfmce1a8.apps.googleusercontent.com'//{process.env.REACT_APP_G_CLIENT_ID}
+                    clientId={process.env.REACT_APP_G_CLIENT_ID}
                     render={(renderProps) => (
                         <button className="btn-alt" onClick={renderProps.onClick} disabled={renderProps.disabled}>
                             sign in <FcGoogle />
@@ -101,7 +103,7 @@ const Login = () => {
                     )}
                     cookiePolicy='single_host_origin'
                     onSuccess={googleSuccess}
-                    onFailure={(e) => console.log(e)}
+                    onFailure={(e) => console.log(e)} //{googleError}
                 />
             </div>
         </form>
