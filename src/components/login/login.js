@@ -13,6 +13,20 @@ import GoogleLogin from 'react-google-login';
 import { gapi } from "gapi-script";
 import { useEffect } from 'react';
 
+
+function App() {
+    const clientID = "473156219422-hedes3ev37d9205ignea28vigae5vjrr.apps.googleusercontent.com";
+
+    useEffect(() =>{
+        const start = () => {
+            gapi.auth2.init({
+                clientID: clientID,
+            })
+        }
+        gapi.load("client:auth2", start)
+    }, [])
+}
+
 const initialState = {
     name: '',
     password: ''
@@ -69,14 +83,16 @@ const Login = () => {
                 className: 'toast-failed',
                 bodyClassName: 'toast-failed',
             })
+            console.log(err);
         }
     }
 
-    const googleError = () => {
+    const googleError = (error) => {
         toast("There was an error signing in, please try again later.", {
             className: 'toast-failed',
             bodyClassName: 'toast-failed',
         })
+        console.error(error);
     }
 
     return (
@@ -103,7 +119,7 @@ const Login = () => {
                     )}
                     cookiePolicy='single_host_origin'
                     onSuccess={googleSuccess}
-                    onFailure={(e) => console.log(e)} //{googleError}
+                    onFailure={googleError}
                 />
             </div>
         </form>
