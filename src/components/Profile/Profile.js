@@ -15,7 +15,7 @@ const initialState = {
     name: '',
     password: '',
     cf_password: ''
-}
+};
 
 const Profile = () => {
 const inputFile = useRef(null);
@@ -27,15 +27,15 @@ const {name, password, cf_password} = data;
 
 const handleInput = () => {
     inputFile.current.click();
-}
+};
 
 const handleClick = ()=> {
     setVisible(!visible);
 };
 
 const handleChange = (e) => {
-    setData({...data, [e.target.name]: e.target.value})
-}
+    setData({...data, [e.target.name]: e.target.value});
+};
 
 const changeAvatar = async (e) => {
     e.preventDefault()
@@ -49,17 +49,17 @@ const changeAvatar = async (e) => {
         const res = await axios.post("/api/upload", formData, {
             headers: {
                 "content-type":"multipart/form-data",
-                Authorization: token
+                Authorization: token,
             },
             onUploadProgress: (x)=>{
                 if(x.total < 1024000)
                 return toast("Uploading", {
                     className: "bg-upload",
                     bodyClassName: "bg-upload",
-                    autoClose: 7000
-                })
-            }
-        })
+                    autoClose: 7000,
+                });
+            },
+        });
         setAvatar(res.data.url)
     } catch (err) {
         toast(err.response.data.msg, {
@@ -81,17 +81,17 @@ const updateInfo = async () => {
         )
         const updatedUser = await axios.get('/api/auth/user', {
             headers: {Authorization: token}
-        })
+        });
         dispatch({type: "GET_USER", payload: updatedUser.data})
         return toast(res.data.msg, {
             className: 'toast-success',
-            bodyClassName: 'toast-success'
-        })
+            bodyClassName: 'toast-success',
+        });
     } catch (err) {
         toast(err.response.data.msg, {
             className: 'toast-failed',
-            bodyClassName: 'toast-failed'
-        })
+            bodyClassName: 'toast-failed',
+        });
     }
 }
 
