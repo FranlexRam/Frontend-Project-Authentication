@@ -1,7 +1,7 @@
 import {BiBookContent} from 'react-icons/bi';
 import {BiUserCircle} from 'react-icons/bi';
 import {BiLogOut} from 'react-icons/bi';
-import axios from 'axios';
+import axios from '../../axiosConfig.js';
 import './sidebar.scss';
 import {AuthContext} from '../../context/AuthContext'
 import { useContext } from 'react';

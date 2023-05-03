@@ -1,6 +1,6 @@
 import {isEmpty, isLength, isMatch} from "../helper/validate.js";
 import {useParams} from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../axiosConfig.js';
 import {ToastContainer, toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../input/input";

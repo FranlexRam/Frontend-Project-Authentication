@@ -7,7 +7,7 @@ import {AiFillCamera} from 'react-icons/ai'
 import { useContext, useRef, useState } from 'react';
 import './profile.scss';
 import { AuthContext } from '../../context/AuthContext';
-import axios from 'axios';
+import axios from '../../axiosConfig.js';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 

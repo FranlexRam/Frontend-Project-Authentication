@@ -3,7 +3,7 @@ import {MdVisibility} from 'react-icons/md'
 import {MdVisibilityOff} from 'react-icons/md'
 import { useState } from "react";
 import {isEmpty, isEmail, isLength, isMatch} from "../helper/validate.js";
-import axios from 'axios';
+import axios from '../../axiosConfig.js';
 import {ToastContainer, toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 

@@ -3,7 +3,7 @@ import {FcGoogle} from 'react-icons/fc';
 import {MdVisibility} from 'react-icons/md';
 import {MdVisibilityOff} from 'react-icons/md';
 import {isEmpty, isEmail} from "../helper/validate.js";
-import axios from 'axios';
+import axios from '../../axiosConfig.js';
 import {ToastContainer, toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../input/input";
