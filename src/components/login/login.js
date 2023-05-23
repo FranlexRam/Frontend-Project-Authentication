@@ -14,18 +14,18 @@ import { gapi } from "gapi-script";
 import { useEffect } from 'react';
 
 
-function App() {
-    const clientID = "473156219422-hedes3ev37d9205ignea28vigae5vjrr.apps.googleusercontent.com";
+// function App() {
+//     const clientID = "473156219422-hedes3ev37d9205ignea28vigae5vjrr.apps.googleusercontent.com";
 
-    useEffect(() =>{
-        const start = () => {
-            gapi.auth2.init({
-                clientID: clientID,
-            })
-        }
-        gapi.load("client:auth2", start)
-    }, [])
-}
+//     useEffect(() =>{
+//         const start = () => {
+//             gapi.auth2.init({
+//                 clientID: clientID,
+//             })
+//         }
+//         gapi.load("client:auth2", start)
+//     }, [])
+// }
 
 const initialState = {
     name: '',
@@ -73,10 +73,10 @@ const Login = () => {
     }
 
     const googleSuccess = async (res) => {
-        const token = res?.tokenId
+        const token = res?.tokenId;
         try {
-            await axios.post("/api/auth/google_signing", {tokenId: token})
-            localStorage.setItem('_appSignging', true)
+            await axios.post("/api/auth/google_signing", {tokenId: token});
+            localStorage.setItem('_appSignging', true);
             dispatch({type: "SIGNING"})
         } catch (err) {
             toast(err.response.data.msg, {
