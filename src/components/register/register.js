@@ -3,7 +3,8 @@ import {MdVisibility} from 'react-icons/md'
 import {MdVisibilityOff} from 'react-icons/md'
 import { useState } from "react";
 import {isEmpty, isEmail, isLength, isMatch} from "../helper/validate.js";
-import axios from '../../axiosConfig.js';
+// import axios from '../../axiosConfig.js';
+import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -81,7 +82,7 @@ const Register = () => {
         <Input type="text" text="Name" name="name" handleChange={handleChange}/>
         <Input type="text" text="Email" name="email" handleChange={handleChange}/>
         <Input
-        name="password"
+            name="password"
             type={visible ? "text" : "password"}
             icon={visible ? <MdVisibility /> : <MdVisibilityOff />}
             text="Password"
@@ -89,7 +90,7 @@ const Register = () => {
             handleChange={handleChange}
         />
         <Input
-        name="cf_password"
+            name="cf_password"
             type={visible ? "text" : "password"}
             icon={visible ? <MdVisibility /> : <MdVisibilityOff />}
             text="Confirm Password"
